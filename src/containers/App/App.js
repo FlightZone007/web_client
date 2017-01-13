@@ -34,20 +34,26 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lat: 51.505,
-      lng: -0.09,
-      zoom: 13,
+      lat: 48.853,
+      lng: 2.35,
+      zoom: 5,
     };
   }
 
   render() {
     const position = [this.state.lat, this.state.lng];
     return (
-      <div>
-        <Map center={position} zoom={this.state.zoom}>
-          <TileLayer
+      <div className={styles.App}>
+        <Map center={position}
+             zoom={this.state.zoom}
+             style={{
+               height: "100vh",
+               width: "100%"
+             }}
+        >
+        <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+            url='http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png'
           />
           <Marker position={position}>
             <Popup>
