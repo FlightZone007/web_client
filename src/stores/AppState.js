@@ -1,4 +1,4 @@
-import { observable, action, map} from 'mobx';
+import { observable } from 'mobx';
 
 class AppState {
 
